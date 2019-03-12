@@ -4,7 +4,7 @@
 2. `cd` in to the downloaded folder
 3. Insert following commands: 
     - `docker-compose build`
-    - `docker-compose run`
+    - `docker-compose up`
 4. App is running on `http://localhost:3000`
 
 ---

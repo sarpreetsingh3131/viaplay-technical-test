@@ -1,0 +1,25 @@
+version: "3.3"
+services:
+  mongo_provision:
+    build: ./provision
+    links:
+     - mongodb
+  
+  app:
+    build: .
+    links:
+      - mongo_provision
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+  mongodb:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+
+      
